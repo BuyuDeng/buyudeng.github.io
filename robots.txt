@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buyudeng.github.io/sitemap.xml
