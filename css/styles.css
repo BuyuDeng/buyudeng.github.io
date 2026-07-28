@@ -105,7 +105,7 @@ nav {
 
 nav a {
   color: var(--text);
-  font-size: 0.84rem;
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
@@ -441,7 +441,7 @@ footer a {
   }
 
   nav a {
-    font-size: 0.77rem;
+    font-size: 0.82rem;
   }
 
   .profile {
