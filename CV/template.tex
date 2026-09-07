@@ -1,0 +1,131 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[10pt,a4paper]{moderncv}
+
+% 1. moderncv 主题
+\moderncvtheme[blue]{classic}
+
+% 2. 页面边距设置
+\usepackage[scale=0.95]{geometry}
+\setlength{\hintscolumnwidth}{3.0cm}
+\recomputelengths % 更改页面布局后必须重新计算
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*, itemsep=0.04em, topsep=0.08em, parsep=0em, partopsep=0em}
+
+% 3. (核心) 设置字体
+% 这一步是设置默认的 "英文字体"
+% moderncv 默认会加载 lmodern (Latin Modern) 字体包，它们是高质量的英文字体
+% 我们可以显式声明一下，或者不写这两行（让 moderncv 自动加载）
+%\usepackage{tgheros}
+%\setmainfont{TeX Gyre Heros}
+%\setsansfont{TeX Gyre Heros}
+
+% 4. (核心) 加载 xeCJK 来处理中文
+\usepackage{xeCJK}
+\XeTeXlinebreaklocale "zh" % 允许中文在正确的地方换行
+\widowpenalty=10000
+%\CJKtilde % 修正 CJK 字符和 ~ 之间的距离
+
+% 5. (核心) 单独设置 "中文字体"
+% 您之前设定的字体在这里使用
+% 注意：请确保您的系统中安装了这两个字体，并且字体文件名无误
+\IfFontExistsTF{Hiragino Sans GB}
+  {\setCJKmainfont[Mapping=tex-text]{Hiragino Sans GB}\setCJKsansfont[Mapping=tex-text]{Hiragino Sans GB}}
+  {\setCJKmainfont[Mapping=tex-text]{Noto Sans CJK SC}\setCJKsansfont[Mapping=tex-text]{Noto Sans CJK SC}}
+
+% 6. 个人信息 (保持不变)
+\firstname{}
+\familyname{Buyu Deng}
+\title{邓卜瑜 \normalsize{Born in December 2006}}
+\homepage{https://buyudeng.github.io/}
+\email{buyudeng@stanford.edu}
+\social[github]{BuyuDeng}
+\address{Middle Campus, USTC}{230026 Hefei, Anhui}
+\nopagenumbers{}
+%\extrainfo{Born in December 2006}
+\photo[60pt]{../assets/img/profile.jpg}                 % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%\quote{引言(可选项)}                           % 可选项、如不需要可删除本行
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------
+\section{\textbf{Education}}
+\cventry
+{2023.09 -- Expected 2027.06}
+{B.S. Candidate}
+{School of the Gifted Young}{}
+{University of Science and Technology of China (USTC)}
+{\textbf{Major:} Geophysics}
+\vspace{0.12em}
+\textbf{GPA:} 3.62/4.30 (\textbf{Rank}: 3/20)
+
+\textbf{Research Interests:} Artificial Intelligence, Subsurface Energy Systems, representation learning and generative models for 3D geophysical data, geomodeling, and Forward Modeling
+%----------------------------------------------------------------------------------
+\section{\textbf{Research Experience}}
+\cventry{2026.07 -- Present}{Undergraduate Research Intern}{\href{https://scerf.stanford.edu/}{\textcolor{blue}{\underline{Stanford Center for Earth Resources Forecasting (SCERF)}}}}{}{Stanford University}{Supervisor: \textbf{Prof. Tapan Mukerji}}
+\vspace{0.08em}
+\begin{itemize}
+    \item Conduct research on geomodeling and Forward Modeling for subsurface energy systems.
+\end{itemize}
+\vspace{0.12em}
+
+\cventry{2024.08 -- Present}{Undergraduate Researcher}{\href{http://cig.ustc.edu.cn/}{\textcolor{blue}{\underline{Computational
+Interpretation Group}}}}{}{}
+{Supervisor: \textbf{Prof. Xinming Wu}}
+\vspace{0.25em}
+
+\textbf{3D "All-in-One" Seismic Denoising}
+\begin{itemize}
+    \item Built a synthetic 3D seismic dataset with random noise, acquisition footprints, and migration artifacts; trained an all-in-one denoising network based on Degradation Representation Learning.\\
+    Code: \href{https://github.com/BuyuDeng/NDR_Seismic}{\textcolor{blue}{\underline{github.com/BuyuDeng/NDR\_Seismic}}}
+\end{itemize}
+\vspace{0.12em}
+
+% --- 第二个小标题：VAE压缩项目 ---
+\textbf{Geo-VAE for 3D Geophysical Data Compression \& Latent Processing}
+\begin{itemize}
+    \item Adapted Wan-VAE into a unified Geo-VAE for seismic volumes, RGT cubes, property models, structures, and geobodies, achieving 8$\times$8$\times$8 volumetric compression with high-fidelity reconstruction.
+    \item Enabled memory-efficient layer-by-layer inference on large 3D volumes using causal 3D convolutions and feature caching, avoiding chunk-boundary artifacts.
+    \item Built latent-space downstream workflows for missing-trace interpolation with a dual-mask latent diffusion model and seismic denoising with an HRNet-style latent mapper.\\
+    Submission: full paper submitted to \textit{Geophysics}; gave an oral presentation at IMAGE 2026.\\
+    Code: \href{https://github.com/BuyuDeng/Geo-VAE}{\textcolor{blue}{\underline{github.com/BuyuDeng/Geo-VAE}}}
+\end{itemize}
+\vspace{0.12em}
+
+\textbf{PHY-to-BGC Ocean Biogeochemical Emulation}
+\begin{itemize}
+    \item Built a 2.5D full-image U-Net emulator mapping global physical ocean fields to coupled BGC variables. The model uses monthly anomaly learning, seasonal/latitudinal auxiliary channels, longitude-circular padding, and global/vertical/basin-scale evaluation.
+    \item Demonstrated that a model trained on normal years maintains strong performance in an El Nino year, suggesting robust generalization under anomalous ocean-climate conditions; \textbf{manuscript in preparation}.
+\end{itemize}
+\vspace{0.2em}
+
+\textbf{GNSS-NISAR Ionospheric Super-Resolution Reconstruction}
+\begin{itemize}
+    \item Developed an automated pipeline to invert high-resolution ionospheric phase delays from NISAR LA/LB dual-frequency InSAR data, convert GNSS TEC differences into L-band ionospheric phase, and align both products in radar/geographic coordinates.
+    \item Next step: train a super-resolution model using GNSS ionospheric phase as the low-resolution background and NISAR-derived phase fields as high-resolution supervision.
+\end{itemize}
+%----------------------------------------------------------------------------------
+
+\section{\textbf{Honors and Awards}}
+
+\cvitem{2025}{\textbf{Zhao Jiuzhang Elite Program Scholarship}, School of Earth and Space Sciences}
+\cvitem{2024}{\textbf{Rose Fund Endeavor Scholarship}, School of the Gifted Young}
+\cvitem{2024}{\textbf{Zhao Jiuzhang Elite Program Scholarship}, School of Earth and Space Sciences}
+\cvitem{2023}{\textbf{Freshman Scholarship}, University of Science and Technology of China (USTC)}
+%----------------------------------------------------------------------------------
+
+\section{\textbf{Experience and Leadership}}
+\cvitem{2025.08}{\textbf{IPGP Geophysical Field Camp}: conducted geophysical surveys and joined academic seminars with faculty from the Institut de Physique du Globe de Paris (IPGP).}
+\cvitem{2025.06 -- 2026.01}{\textbf{Head (Minister)}, Dept. of Cultural \& Sports in College Student Union}
+\end{document}
