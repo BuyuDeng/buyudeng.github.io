@@ -99,9 +99,9 @@ Interpretation Group}}} (CIG)}{}{}
 % --- 第二个小标题：VAE压缩项目 ---
 \textbf{Geo-VAE for 3D Geophysical Data Compression \& Latent Processing}
 \begin{itemize}
-    \item Adapted Wan-VAE into a unified Geo-VAE for seismic volumes, RGT cubes, property models, structures, and geobodies, achieving 8$\times$8$\times$8 volumetric compression with high-fidelity reconstruction.
-    \item Enabled memory-efficient layer-by-layer inference on large 3D volumes using causal 3D convolutions and feature caching, avoiding chunk-boundary artifacts.
-    \item Built latent-space downstream workflows for missing-trace interpolation with a dual-mask latent diffusion model and seismic denoising with an HRNet-style latent mapper.\\
+    \item Adapted Wan-VAE with cached causal pseudo-temporal resampling along crossline, achieving isotropic 8$\times$8$\times$8 downsampling and 31.0:1 scalar compression for 256$^3$ cubes.
+    \item Benchmarked five 3D geophysical modalities over 128$^3$--512$^3$ cubes; maintained competitive, modality-dependent reconstruction fidelity and reduced latency versus fine-tuned Wan-VAE at larger cube sizes.
+    \item Developed RGT-conditioned seismic generation and 768$^3$ complete-volume latent denoising; one latent-map call achieved higher SSIM and lower leakage than raw-space controls.\\
     Full manuscript under revision at \textit{Geophysics}; gave an oral presentation at IMAGE 2026.\\
     Code: \href{https://github.com/BuyuDeng/Geo-VAE}{\textcolor{blue}{\underline{github.com/BuyuDeng/Geo-VAE}}}
 \end{itemize}

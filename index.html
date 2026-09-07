@@ -235,16 +235,18 @@
             <article class="project project-featured">
               <h3>Geo‑VAE</h3>
               <p>
-                A unified variational autoencoder for compression and latent
-                processing of seismic volumes, RGT cubes, property models,
-                structures, geobodies, and field data. The model achieves
-                8×8×8 spatial compression with high-fidelity reconstruction.
+                Geo‑VAE adapts the pretrained Wan‑VAE to map seismic,
+                impedance, RGT, fault masks, and field seismic into a compact
+                latent domain. Cached causal resampling treats crossline as a
+                pseudo-temporal sequence, yielding isotropic 8×8×8
+                downsampling and 31:1 scalar compression for 256³ cubes.
               </p>
               <p>
-                Causal 3D convolutions and feature caching enable
-                memory-efficient inference on large volumes. The learned latent
-                space supports missing-trace interpolation and seismic
-                denoising.
+                Across 128³–512³ cubes, it maintains competitive,
+                modality-dependent reconstruction fidelity and reduces latency
+                versus fine-tuned Wan‑VAE at larger volumes. The latent
+                interface supports RGT-conditioned seismic generation and
+                complete-volume 768³ latent denoising.
               </p>
               <p class="project-links">
                 <a href="https://github.com/BuyuDeng/Geo-VAE" target="_blank" rel="noreferrer">[Code]</a>
@@ -253,14 +255,15 @@
                 <a href="Overview.png" aria-label="Open the full Geo-VAE overview">
                   <img
                     src="assets/img/geovae-overview.webp"
-                    alt="Overview of the Geo-VAE architecture, feature caching, and downstream latent-space tasks"
+                    alt="Overview of Geo-VAE, showing cached causal 8×8×8 compression, RGT-conditioned seismic generation, and latent denoising"
                     width="2934"
                     height="1650"
                     loading="lazy"
                   >
                 </a>
                 <figcaption>
-                  Overview of Geo‑VAE and its latent-space downstream tasks.
+                  Cached causal compression in Geo‑VAE and its RGT-conditioned
+                  seismic generation and complete-volume latent denoising tasks.
                 </figcaption>
               </figure>
             </article>
