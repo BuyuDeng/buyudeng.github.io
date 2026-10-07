@@ -48,7 +48,7 @@ AI for exploration geophysics; seismic interpretation, geomodeling, rock physics
   \item Generated baseline and time-lapse seismic responses for 20 years of CO$_2$ injection and 80 years after shut-in; interpreted horizon-relative amplitude slices in Petrel.
   \item Designed an agent workflow around the Stanford Rock Physics and Borehole Geophysics (SRB) model library exposed through Model Context Protocol (MCP) tools for model discovery, input validation, and traceable calculations.
   \item Conducted 45 independent agent runs across Smeaheia, glass-bead, and White patchy-saturation benchmarks under three resource settings: no references, textbook guidance only, and textbook guidance plus SRB tools.
-  \item Without references, agents made unsupported model assumptions; textbook guidance recovered the prescribed physics and reference results; adding SRB tools enabled direct model calls but required careful interpretation of outputs.
+  \item Without references, agents used unsupported pore-scale assumptions or the wrong White formulation; textbook guidance matched reference calculations. SRB outputs matched when interpreted correctly, but two runs applied the wave-number formula to SRB inverse Q, overestimating low-frequency slow-P attenuation.
 }
 Presentation: \cvlink{https://buyudeng.github.io/Final_Presentation.pdf}{\underline{Final slides (PDF)}}\par\vspace{0.3em}
 \cvorg{Computational Interpretation Group (CIG), University of Science and Technology of China}{Hefei, China}
