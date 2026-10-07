@@ -1,133 +1,96 @@
 %!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-\documentclass[10pt,a4paper]{moderncv}
-
-% 1. moderncv 主题
-\moderncvtheme[blue]{classic}
-
-% 2. 页面边距设置
-\usepackage[scale=0.95]{geometry}
-\setlength{\hintscolumnwidth}{3.0cm}
-\recomputelengths % 更改页面布局后必须重新计算
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.82in,top=0.72in,bottom=0.72in]{geometry}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*, itemsep=0.04em, topsep=0.08em, parsep=0em, partopsep=0em}
-
-% 3. (核心) 设置字体
-% 这一步是设置默认的 "英文字体"
-% moderncv 默认会加载 lmodern (Latin Modern) 字体包，它们是高质量的英文字体
-% 我们可以显式声明一下，或者不写这两行（让 moderncv 自动加载）
-%\usepackage{tgheros}
-%\setmainfont{TeX Gyre Heros}
-%\setsansfont{TeX Gyre Heros}
-
-% 4. (核心) 加载 xeCJK 来处理中文
-\usepackage{xeCJK}
-\XeTeXlinebreaklocale "zh" % 允许中文在正确的地方换行
-\widowpenalty=10000
-%\CJKtilde % 修正 CJK 字符和 ~ 之间的距离
-
-% 5. (核心) 单独设置 "中文字体"
-% 您之前设定的字体在这里使用
-% 注意：请确保您的系统中安装了这两个字体，并且字体文件名无误
-\IfFontExistsTF{Hiragino Sans GB}
-  {\setCJKmainfont[Mapping=tex-text]{Hiragino Sans GB}\setCJKsansfont[Mapping=tex-text]{Hiragino Sans GB}}
-  {\setCJKmainfont[Mapping=tex-text]{Noto Sans CJK SC}\setCJKsansfont[Mapping=tex-text]{Noto Sans CJK SC}}
-
-% 6. 个人信息 (保持不变)
-\firstname{}
-\familyname{Buyu Deng}
-\homepage{https://buyudeng.github.io/}
-\email{buyudeng@stanford.edu}
-\social[github]{BuyuDeng}
-\address{Middle Campus, USTC}{230026 Hefei, Anhui}
-\nopagenumbers{}
-%\extrainfo{Born in December 2006}
-\photo[60pt]{../assets/img/profile.jpg}                 % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
-%\quote{引言(可选项)}                           % 可选项、如不需要可删除本行
-
-% 显示索引号;仅用于在简历中使用了引言
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-
-% 分类索引
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            内容
-%----------------------------------------------------------------------------------
+\usepackage{hyperref}
+\usepackage{microtype}
+\hypersetup{colorlinks=false,pdfborder={0 0 0},pdftitle={Buyu Deng - Curriculum Vitae},pdfauthor={Buyu Deng}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{leftmargin=1.45em,label=--,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\pagestyle{empty}
+\newcommand{\cvsection}[1]{\vspace{0.85em}\begin{center}\bfseries\MakeUppercase{#1}\end{center}\vspace{-0.7em}}
+\newcommand{\cvorg}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\cvrole}[2]{#1\hfill #2\par}
+\newcommand{\cvproject}[1]{\par\vspace{0.42em}\textit{#1}\par}
+\newcommand{\cvlist}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\cvlink}[2]{\href{#1}{#2}}
 \begin{document}
-\maketitle
-%----------------------------------------------------------------------------------
-\section{\textbf{Education}}
-\cventry
-{2023.09 -- Expected 2027.06}
-{B.S. Candidate}
-{School of the Gifted Young}{}
-{University of Science and Technology of China (USTC)}
-{\textbf{Major:} Geophysics}
-\vspace{0.45em}
-\textbf{GPA:} 3.62/4.30 (\textbf{Rank}: 3/20)
-
-\vspace{0.22em}
-\textbf{Relevant Coursework:} Linear Algebra: \textbf{90}, Probability \& Statistics: \textbf{92}, Theoretical Mechanics: \textbf{95}, Python \& Deep Learning: \textbf{A}, Programming in Geophysics: \textbf{94}, Introduction to Seismic Exploration: \textbf{98}
-
-\vspace{0.08em}
-\textbf{Research Interests:} Seismic interpretation, geomodeling, forward modeling; deep learning, agentic AI
-\vspace{0.16em}
-%----------------------------------------------------------------------------------
-\section{\textbf{Research Experience}}
-\cventry{2026.07 -- Present}{Undergraduate Research Intern}{\href{https://scerf.stanford.edu/}{\textcolor{blue}{\underline{Stanford Center for Earth Resources Forecasting (SCERF)}}}}{}{Stanford University}{Supervisor: \textbf{Prof. Tapan Mukerji}}
-\vspace{0.08em}
-\begin{itemize}
-    \item Conduct research on geomodeling and forward modeling for subsurface energy systems.
-\end{itemize}
-\vspace{0.12em}
-
-\cventry{2024.08 -- Present}{Undergraduate Researcher}{\href{http://cig.ustc.edu.cn/}{\textcolor{blue}{\underline{Computational
-Interpretation Group}}} (CIG)}{}{}
-{Supervisor: \textbf{Prof. Xinming Wu}}
-\vspace{0.45em}
-
-\textbf{3D "All-in-One" Seismic Denoising}
-\begin{itemize}
-    \item Built a synthetic 3D seismic dataset with random noise, acquisition footprints, and migration artifacts; trained an all-in-one denoising network based on Degradation Representation Learning.\\
-    Code: \href{https://github.com/BuyuDeng/NDR_Seismic}{\textcolor{blue}{\underline{github.com/BuyuDeng/NDR\_Seismic}}}
-\end{itemize}
-\vspace{0.12em}
-
-% --- 第二个小标题：VAE压缩项目 ---
-\textbf{Geo-VAE for 3D Geophysical Data Compression \& Latent Processing}
-\begin{itemize}
-    \item Adapted Wan-VAE with cached causal pseudo-temporal resampling along crossline, achieving isotropic 8$\times$8$\times$8 downsampling and 31.0:1 scalar compression for 256$^3$ cubes.
-    \item Benchmarked five 3D geophysical modalities over 128$^3$--512$^3$ cubes; maintained competitive, modality-dependent reconstruction fidelity and reduced latency versus fine-tuned Wan-VAE at larger cube sizes.
-    \item Developed RGT-conditioned seismic generation and 768$^3$ complete-volume latent denoising; one latent-map call achieved higher SSIM and lower leakage than raw-space controls.\\
-    Full manuscript under revision at \textit{Geophysics}; gave an oral presentation at IMAGE 2026.\\
-    Code: \href{https://github.com/BuyuDeng/Geo-VAE}{\textcolor{blue}{\underline{github.com/BuyuDeng/Geo-VAE}}}
-\end{itemize}
-\vspace{0.12em}
-
-\textbf{PHY-to-BGC Ocean Biogeochemical Emulation}
-\begin{itemize}
-    \item Built a 2.5D full-image U-Net emulator mapping global physical ocean fields to coupled biogeochemical variables, with evaluation under anomalous ocean-climate conditions; \textbf{manuscript in preparation}.
-\end{itemize}
-\vspace{0.12em}
-
-\textbf{GNSS-NISAR Ionospheric Super-Resolution Reconstruction}
-\begin{itemize}
-    \item Developed an automated pipeline aligning GNSS TEC-derived ionospheric phase with NISAR dual-frequency InSAR for high-resolution super-resolution research.
-\end{itemize}
-%----------------------------------------------------------------------------------
-
-\section{\textbf{Honors and Awards}}
-
-\cvitem{2025}{\textbf{Zhao Jiuzhang Elite Program Scholarship}, School of Earth and Space Sciences}
-\cvitem{2024}{\textbf{Rose Fund Endeavor Scholarship}, School of the Gifted Young}
-\cvitem{2024}{\textbf{Zhao Jiuzhang Elite Program Scholarship}, School of Earth and Space Sciences}
-\cvitem{2023}{\textbf{Freshman Scholarship}, University of Science and Technology of China (USTC)}
-%----------------------------------------------------------------------------------
-
-\section{\textbf{Experience and Leadership}}
-\cvitem{2025.08}{\textbf{IPGP Geophysical Field Camp}: conducted geophysical surveys and joined academic seminars with faculty from the Institut de Physique du Globe de Paris (IPGP).}
-\cvitem{2025.06 -- 2026.01}{\textbf{Head (Minister)}, Dept. of Cultural \& Sports in College Student Union}
+\begin{center}
+  {\large\bfseries BUYU DENG}\\[2pt]
+  School of the Gifted Young, University of Science and Technology of China\\
+  Hefei, Anhui, China\\
+  \href{mailto:bydeng@mail.ustc.edu.cn}{bydeng@mail.ustc.edu.cn}
+  \quad | \quad
+  \href{mailto:buyudeng@stanford.edu}{buyudeng@stanford.edu}\\
+  \cvlink{https://buyudeng.github.io/}{buyudeng.github.io}
+  \quad | \quad
+  \cvlink{https://github.com/BuyuDeng}{github.com/BuyuDeng}
+\end{center}
+\cvsection{Education}
+\cvorg{University of Science and Technology of China}{Hefei, China}
+\cvrole{B.S. Candidate in Geophysics, School of the Gifted Young}{Expected June 2027}
+GPA: 3.62/4.30; rank: 3/20\\
+{\fontsize{9.3}{11.2}\selectfont
+Coursework: Programming in Geophysics (94), Intro. to Seismic Exploration (98), Geophysical Data Processing and Analysis (93), Linear Algebra (90), Probability \& Statistics (92), Theoretical Mechanics (95), Python \& Deep Learning (A).\par}
+\cvsection{Research Interests}
+AI for exploration geophysics; seismic interpretation, geomodeling, rock physics, and forward modeling.
+\cvsection{Research Experience}\vspace{0.3em}
+\cvorg{Stanford Center for Earth Resources Forecasting (SCERF), Stanford University}{Stanford, CA}
+\cvrole{Undergraduate Research Intern; advisor: Prof. Tapan Mukerji}{July -- October 2026}
+\cvproject{CO$_2$ Storage Modeling and Rock Physics Agent Development}
+\cvlist{
+  \item Compared five vertical grid resolutions (0.04--0.92 ft) in ECLIPSE 300 CO$_2$STORE simulations using fixed-time plume geometry, fixed-location saturation histories, space-time plume metrics, and computational cost; selected 0.12 ft for subsequent modeling.
+  \item Built a facies-based rock physics workflow using mineral averaging, Hertz--Mindlin dry frames, Wood fluid mixing, and Gassmann substitution to map geology and CO$_2$ saturation to elastic properties.
+  \item Generated baseline and time-lapse seismic responses for 20 years of CO$_2$ injection and 80 years after shut-in; interpreted horizon-relative amplitude slices in Petrel.
+  \item Designed an agent workflow around the Stanford Rock Physics and Borehole Geophysics (SRB) model library exposed through Model Context Protocol (MCP) tools for model discovery, input validation, and traceable calculations.
+  \item Conducted 45 independent agent runs across Smeaheia, glass-bead, and White patchy-saturation benchmarks, comparing access to textbook guidance and SRB tools.
+  \item Compared three resource settings: without references, agents made unsupported model assumptions; textbook guidance recovered the prescribed physics and reference results; textbook plus SRB tools enabled direct model calls but required careful interpretation of outputs.
+}
+\cvorg{Computational Interpretation Group (CIG), University of Science and Technology of China}{Hefei, China}
+\cvrole{Undergraduate Researcher; advisor: Prof. Xinming Wu}{August 2024 -- Present}
+\cvproject{Geo-VAE for 3D Geophysical Data Compression and Latent Processing}
+\cvlist{
+  \item Adapted Wan-VAE with cached causal pseudo-temporal resampling along the crossline axis, achieving isotropic 8$\times$8$\times$8 downsampling and 31.0:1 scalar compression for 256$^3$ cubes.
+  \item Demonstrated strong reconstruction fidelity across five 3D geophysical modalities while achieving a favorable balance of GPU memory use and inference time among tested state-of-the-art video VAEs on 128$^3$--512$^3$ cubes.
+  \item Built a unified compact latent space for RGT-conditioned seismic generation and complete-volume 768$^3$ denoising, enabling condition-responsive generation and scalable field-volume processing.
+}
+Code: \cvlink{https://github.com/BuyuDeng/Geo-VAE}{github.com/BuyuDeng/Geo-VAE}
+\newpage
+\noindent\hfill Buyu Deng \qquad 2\par
+\cvsection{Research Experience (continued)}
+\cvproject{3D All-in-One Seismic Denoising}
+\cvlist{
+  \item Built a synthetic 3D seismic dataset with random noise, acquisition footprints, and migration artifacts; trained an all-in-one denoising network based on Degradation Representation Learning.
+}
+Code: \cvlink{https://github.com/BuyuDeng/NDR_Seismic}{github.com/BuyuDeng/NDR\_Seismic}
+\cvsection{Additional Research Projects}
+\cvproject{PHY-to-BGC Ocean Biogeochemical Emulation}
+\cvlist{
+  \item Built a 2.5D full-image U-Net emulator mapping global physical ocean fields to coupled biogeochemical variables, including evaluation under anomalous ocean-climate conditions. Manuscript in preparation.
+}
+\cvproject{GNSS--NISAR Ionospheric Super-Resolution Reconstruction}
+\cvlist{
+  \item Developed an automated pipeline aligning GNSS TEC-derived ionospheric phase with NISAR dual-frequency InSAR for high-resolution reconstruction research.
+}
+\cvsection{Publications and Presentations}
+\textbf{B. Deng}, Y. Dou, Z. Guo, and X. Wu. "Geo-VAE: A Unified Variational Autoencoder for 3D Geophysical Data Compression and Latent Processing." Submitted to \textit{Geophysics}; major revision requested, 2026.\par\vspace{0.3em}
+\textbf{B. Deng}. "Geo-VAE: A Unified Variational Autoencoder for 3D Geophysical Data Compression and Latent Processing." Oral presentation, International Meeting for Applied Geoscience \& Energy (IMAGE 2026), Houston, TX, August 2026.\par\vspace{0.3em}
+\textbf{B. Deng}. "CO$_2$ Storage Modeling and Rock Physics Agent Development." SCERF Seminar, Stanford University, September 2026.\par\vspace{0.3em}
+Y. Dou, X. Wu, Z. Guo, H. Gao, and \textbf{B. Deng}. "Implicit Structural Modeling via Generative Diffusion Frameworks." \textit{arXiv:2606.07165}, 2026. \cvlink{https://arxiv.org/abs/2606.07165}{arxiv.org/abs/2606.07165}.
+\cvsection{Research Skills}
+\textbf{Computing:} Python, deep learning for 3D geophysical data, numerical modeling, scientific visualization.\\
+\textbf{Geophysics:} Seismic interpretation and forward modeling, rock physics, CO$_2$ flow simulation, ECLIPSE 300, Petrel.
+\cvsection{Honors and Awards}
+\cvrole{Zhao Jiuzhang Elite Program Scholarship, School of Earth and Space Sciences}{2025}
+\cvrole{Rose Fund Endeavor Scholarship, School of the Gifted Young}{2024}
+\cvrole{Zhao Jiuzhang Elite Program Scholarship, School of Earth and Space Sciences}{2024}
+\cvrole{Freshman Scholarship, University of Science and Technology of China}{2023}
+\cvsection{Field Experience and Leadership}
+\cvrole{\textbf{IPGP Geophysical Field Camp}, Institut de Physique du Globe de Paris}{August 2025}
+Conducted geophysical surveys and joined academic seminars with IPGP faculty.\par\vspace{0.3em}
+\cvrole{\textbf{Head (Minister)}, Department of Cultural \& Sports, College Student Union}{June 2025 -- January 2026}
 \end{document}
