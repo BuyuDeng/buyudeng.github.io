@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{fontawesome5}
 \usepackage{microtype}
 \hypersetup{colorlinks=false,pdfborder={0 0 0},pdftitle={Buyu Deng - Curriculum Vitae},pdfauthor={Buyu Deng}}
 \setlength{\parindent}{0pt}
@@ -18,17 +19,18 @@
 \newcommand{\cvproject}[1]{\par\vspace{0.42em}\textit{#1}\par}
 \newcommand{\cvlist}[1]{\begin{itemize}#1\end{itemize}}
 \newcommand{\cvlink}[2]{\href{#1}{\underline{#2}}}
+\newcommand{\cvcontact}[3]{\href{#1}{#2\enspace #3}}
 \begin{document}
 \begin{center}
   {\large\bfseries BUYU DENG}\\[2pt]
   School of the Gifted Young, University of Science and Technology of China\\
   Hefei, Anhui, China\\
-  \cvlink{mailto:bydeng@mail.ustc.edu.cn}{bydeng@mail.ustc.edu.cn}
+  \cvcontact{mailto:bydeng@mail.ustc.edu.cn}{\faEnvelope}{bydeng@mail.ustc.edu.cn}
   \quad | \quad
-  \cvlink{mailto:buyudeng@stanford.edu}{buyudeng@stanford.edu}\\
-  \cvlink{https://buyudeng.github.io/}{buyudeng.github.io}
+  \cvcontact{mailto:buyudeng@stanford.edu}{\faEnvelope}{buyudeng@stanford.edu}\\
+  \cvcontact{https://buyudeng.github.io/}{\faGlobe}{buyudeng.github.io}
   \quad | \quad
-  \cvlink{https://github.com/BuyuDeng}{github.com/BuyuDeng}
+  \cvcontact{https://github.com/BuyuDeng}{\faGithub}{github.com/BuyuDeng}
 \end{center}
 \cvsection{Education}
 \cvorg{University of Science and Technology of China}{Hefei, China}
