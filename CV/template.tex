@@ -58,7 +58,7 @@ Presentation: \cvlink{https://buyudeng.github.io/Final_Presentation.pdf}{\underl
   \item Adapted Wan-VAE with cached causal pseudo-temporal resampling along the crossline axis, achieving isotropic 8$\times$8$\times$8 downsampling and 31.0:1 scalar compression for 256$^3$ cubes.
   \item Demonstrated strong reconstruction fidelity across five 3D geophysical modalities while achieving a favorable balance of GPU memory use and inference time among tested state-of-the-art video VAEs on 128$^3$--512$^3$ cubes.
   \item Built a unified compact latent space for RGT-conditioned seismic generation, enabling geological structure control in the compressed domain.
-  \item Used the same latent space for complete-volume 768$^3$ denoising, enabling scalable processing of field seismic data.
+  \item Denoised an entire 768$^3$ field seismic volume in a single latent-domain pass, eliminating the need for patchwise or repeated processing.
 }
 Code: \cvlink{https://github.com/BuyuDeng/Geo-VAE}{github.com/BuyuDeng/Geo-VAE}
 \newpage
